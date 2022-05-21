@@ -17,6 +17,7 @@ public class UserController {
 
   @PostMapping(path="/add") // Map ONLY POST Requests
   public @ResponseBody String addNewUser (
+		  @RequestParam int id,
 		  @RequestParam String admin,
 		  @RequestParam String name,
 		  @RequestParam String password,
@@ -26,6 +27,7 @@ public class UserController {
     // @RequestParam means it is a parameter from the GET or POST request
 
     Users n = new Users();
+    n.setId(id);
     n.setAdmin(admin);
     n.setName(name);
     n.setPassword(password);

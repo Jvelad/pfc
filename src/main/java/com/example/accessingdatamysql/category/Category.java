@@ -1,5 +1,4 @@
-package com.example.accessingdatamysql.language;
-
+package com.example.accessingdatamysql.category;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class Language {
+public class Category {
+
 	@Id
 	private int id;
+
+	private String name;
 	
-	private String intl_id;
+	private String type;
 
 	public int getId() {
 		return id;
@@ -21,12 +23,20 @@ public class Language {
 		this.id = id;
 	}
 
-	public String getIntl_id() {
-		return intl_id;
+	public String getName() {
+		return name;
 	}
 
-	public void setIntl_id(String intl_id) {
-		this.intl_id = intl_id;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }
